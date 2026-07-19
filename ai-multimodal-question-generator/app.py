@@ -42,7 +42,7 @@ logger = logging.getLogger(__name__)
 # Constants
 # ---------------------------------------------------------------------------
 MIN_TEXT_LENGTH = 100   # characters
-APP_TITLE       = "AI Question Generator"
+APP_TITLE       = "AI Bloom's Taxonomy classifier!!"
 
 BLOOM_COLOURS: dict[str, str] = {
     "Remember":   "#4CAF50",
@@ -223,6 +223,99 @@ st.markdown(
     .stButton button {
         font-weight: bold !important;
         border-radius: 8px !important;
+    }
+
+    /* ── Dark theme overrides ── */
+    .stApp,
+    [data-testid="stAppViewContainer"],
+    [data-testid="stAppViewContainer"] > .main,
+    .main {
+        background: #0f172a !important;
+        color: #e5e7eb !important;
+    }
+
+    [data-testid="stSidebar"],
+    .css-1d391kg {
+        background: #0b1220 !important;
+    }
+
+    .question-card,
+    .stat-card {
+        background: #111827 !important;
+        border: 1px solid #1f2937 !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+    }
+
+    .question-text,
+    .stat-number,
+    .stat-label,
+    p,
+    label,
+    .stMarkdown,
+    .stCaption,
+    .stSubheader,
+    .stHeader {
+        color: #e5e7eb !important;
+    }
+
+    .option-item {
+        background: #1f2937 !important;
+        border: 1px solid #334155 !important;
+        color: #e5e7eb !important;
+    }
+
+    .option-item:hover {
+        background: #273449 !important;
+    }
+
+    .stRadio label {
+        background-color: #111827 !important;
+        color: #e5e7eb !important;
+        border: 1px solid #334155 !important;
+    }
+
+    .stRadio label > div,
+    .stRadio label > div > div,
+    .stRadio label span,
+    .stRadio * {
+        color: #e5e7eb !important;
+    }
+
+    .stTextInput input,
+    .stTextArea textarea {
+        background-color: #111827 !important;
+        color: #e5e7eb !important;
+        border: 1px solid #334155 !important;
+        caret-color: #e5e7eb !important;
+    }
+
+    .stButton button {
+        background: #0b1220 !important;
+        color: #e5e7eb !important;
+        border: 1px solid #334155 !important;
+    }
+
+    .stButton button[kind="primary"] {
+        background: linear-gradient(135deg, #0ea5e9, #06b6d4) !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+
+    .stFileUploader,
+    [data-testid="stFileUploader"],
+    [data-testid="stTextArea"],
+    [data-testid="stTextInput"],
+    [data-testid="stDataFrame"],
+    [data-testid="stMetric"] {
+        color: #e5e7eb !important;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        color: #cbd5e1 !important;
+    }
+
+    .stTabs [aria-selected="true"] {
+        color: #67e8f9 !important;
     }
     </style>
     """,
@@ -574,7 +667,7 @@ def tab_generate(
     tf_gen: TrueFalseGenerator | None = None,
     sa_gen: ShortAnswerGenerator | None = None,
 ) -> None:
-    st.subheader("📝 Generate & Practice Questions")
+    st.subheader("📝 Generate & Practice Questions") #ak
 
     # ── Input source ─────────────────────────────────────────────────────────
     input_method = st.radio(
@@ -1069,7 +1162,7 @@ def main() -> None:
         """
         <div style="background:linear-gradient(135deg,#2E4057,#048A81);
                     border-radius:12px;padding:24px 32px;margin-bottom:24px;">
-            <h1 style="color:#ffffff;margin:0;font-size:2.2rem;">🧠 AI Question Generator</h1>
+            <h1 style="color:#ffffff;margin:0;font-size:2.2rem;">🧠 AI Bloom's Taxonomy classifier!!</h1>
             <p style="color:#cce8e5;margin:6px 0 0 0;font-size:1rem;">
                 Generate Bloom's-Taxonomy-aligned MCQ, True/False, and Short Answer questions
                 from any text — then practise interactively in Quiz Mode.
